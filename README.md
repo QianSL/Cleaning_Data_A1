@@ -32,7 +32,7 @@ I assume the '.zip' file needed is already prepared in your working directory.
 ### run_analysis.R
 The cript is handling data like this:
 
-1. Assume the .zip file is in the working directory, let's read each data file possible to R
+1. Assume the .zip file is in the working directory, let's read each data file possible to R  
 rm(list=ls())
 unzip('getdata-projectfiles-UCI HAR Dataset.zip')
 read.table('UCI HAR Dataset/features.txt', sep='') -> features
