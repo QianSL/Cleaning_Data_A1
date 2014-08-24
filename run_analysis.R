@@ -63,7 +63,7 @@ colnames(Data_2) <- c('subject','activities',as.character(
 library(reshape2)
 Data_melt <- melt(Data_2, id=c('subject','activities'))
 Data_5 <- dcast(Data_melt, subject + activities ~ variable, mean)
-write.table(Data_5, file='Tidy_data', row.name=FALSE)
+write.table(Data_5, file='Tidy_data.txt', row.name=FALSE)
 
 
 

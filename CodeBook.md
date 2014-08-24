@@ -8,7 +8,7 @@ Generally, the data handling process was made according to the requirement of th
 4. Appropriately labels the data set with descriptive variable names. 
 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
-**No treatments toward units was made in the whole process.**
+**As Units are not mentioned in the introduction, no treatments toward units was made in the whole process.**
 
 ## Step1 Merges ... 
 'Data' is created for this step, the structure is:
@@ -42,7 +42,7 @@ So, the column structure of 'Data_5' is same as 'Data_2', except the variables a
 Then, a file with the name 'Tidy_data.txt' according to Data_5 was created for later uploading.
 
 
-** For more information, please refer to the comments and code in 'run_analysis.R' **
+**For more information, please refer to the comments and code in 'run_analysis.R'**
 
 
 
