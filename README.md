@@ -33,8 +33,7 @@ I assume the '.zip' file needed is already prepared in your working directory.
 The cript is handling data like this:
 
 1. Assume the .zip file is in the working directory, let's read each data file possible to R  
-
-rm(list=ls())  
+*rm(list=ls())  
 unzip('getdata-projectfiles-UCI HAR Dataset.zip')  
 read.table('UCI HAR Dataset/features.txt', sep='') -> features  
 read.table('UCI HAR Dataset/activity_labels.txt', sep='') -> activity_labels  
@@ -49,7 +48,7 @@ read.table('UCI HAR Dataset/train/X_train.txt', sep='') -> X_train
 read.table('UCI HAR Dataset/train/y_train.txt', sep='') -> y_train  
 list.files('UCI HAR Dataset/train/Inertial Signals') -> signal_name_train  
 lapply(paste('UCI HAR Dataset/train/Inertial Signals/', signal_name_train, sep=''), 
-       read.table) -> Inertial_signal_train  
+       read.table) -> Inertial_signal_train*
 
 2. Merge data together, first 'train', then 'test', then together.  
 
