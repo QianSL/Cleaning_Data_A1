@@ -33,22 +33,22 @@ I assume the '.zip' file needed is already prepared in your working directory.
 The cript is handling data like this:
 
 1. Assume the .zip file is in the working directory, let's read each data file possible to R  
-rm(list=ls())
-unzip('getdata-projectfiles-UCI HAR Dataset.zip')
-read.table('UCI HAR Dataset/features.txt', sep='') -> features
-read.table('UCI HAR Dataset/activity_labels.txt', sep='') -> activity_labels
-read.table('UCI HAR Dataset/test/subject_test.txt', sep='') -> subject_test
-read.table('UCI HAR Dataset/test/X_test.txt', sep='') -> X_test
-read.table('UCI HAR Dataset/test/y_test.txt', sep='') -> y_test
-list.files('UCI HAR Dataset/test/Inertial Signals') -> signal_name_test
+rm(list=ls())  
+unzip('getdata-projectfiles-UCI HAR Dataset.zip')  
+read.table('UCI HAR Dataset/features.txt', sep='') -> features  
+read.table('UCI HAR Dataset/activity_labels.txt', sep='') -> activity_labels  
+read.table('UCI HAR Dataset/test/subject_test.txt', sep='') -> subject_test  
+read.table('UCI HAR Dataset/test/X_test.txt', sep='') -> X_test  
+read.table('UCI HAR Dataset/test/y_test.txt', sep='') -> y_test  
+list.files('UCI HAR Dataset/test/Inertial Signals') -> signal_name_test  
 lapply(paste('UCI HAR Dataset/test/Inertial Signals/', signal_name_test, sep=''), 
-       read.table) -> Inertial_signal_test
-read.table('UCI HAR Dataset/train/subject_train.txt', sep='') -> subject_train
-read.table('UCI HAR Dataset/train/X_train.txt', sep='') -> X_train
-read.table('UCI HAR Dataset/train/y_train.txt', sep='') -> y_train
-list.files('UCI HAR Dataset/train/Inertial Signals') -> signal_name_train
+       read.table) -> Inertial_signal_test  
+read.table('UCI HAR Dataset/train/subject_train.txt', sep='') -> subject_train  
+read.table('UCI HAR Dataset/train/X_train.txt', sep='') -> X_train  
+read.table('UCI HAR Dataset/train/y_train.txt', sep='') -> y_train  
+list.files('UCI HAR Dataset/train/Inertial Signals') -> signal_name_train  
 lapply(paste('UCI HAR Dataset/train/Inertial Signals/', signal_name_train, sep=''), 
-       read.table) -> Inertial_signal_train
+       read.table) -> Inertial_signal_train  
 
 2. Merge data together, first 'train', then 'test', then together.
 cbind(subject_train, y_train, X_train, as.data.frame(Inertial_signal_train)) -> 
